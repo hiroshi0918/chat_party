@@ -1,0 +1,143 @@
+.wrapper{
+  display: flex;
+  .left{
+    width: 40vw;
+    height: 88vh;
+    border-right:ridge 2px#000000;
+    .people{
+      height: 15%;
+      display: flex;
+      box-sizing: border-box;
+      .person{
+        width: 25%;
+        display: inline-block;
+        &__photo{
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background-color: grey;
+          margin-left: 10px;
+          margin-top: 5px;
+        }
+        &__name{
+          height: 60px;
+          line-height: 60px;
+          text-align: center;
+          display: inline-block;
+          vertical-align: top;
+          font-size: 16px;
+          overflow: hidden;
+        }
+        &__video{
+          height: 20px;
+          width: 20px;
+          display: inline-block;
+          vertical-align: top;
+          .fa-play-circle{
+            font-size: 25px;
+            line-height: 60px;
+          }
+
+
+        }
+      }
+    }
+    .messages{
+      padding: 0 15px 10px;
+      height: 70%;
+      overflow: scroll;
+      box-sizing: border-box;
+      .message:first-child{
+        margin-top: 0px;
+      }
+      .message{
+        height: 50px;
+        width: 100%;
+        margin-top: 23px;
+        &__icon{
+          float: left;
+          margin-right: -50px;
+          width: 40px;
+          border-radius: 50%;
+        }
+        &__chatting{
+          width: 100%;
+          text-align: left;
+          &__says{
+            display: inline-block;
+            position: relative; 
+            margin: 0 0 0 50px;
+            padding: 10px;
+            max-width: 450px;
+            border-radius: 12px;
+            background: #edf1ee;
+          }
+          &__says:after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 3px; 
+            left: -19px;
+            border: 8px solid transparent;
+            border-right: 18px solid #edf1ee;
+            transform: rotate(35deg);
+          }
+        }
+      }
+    }
+    .form{
+      height: 15%;
+      width: 100%;
+      padding: 15px;
+      .new-message{
+        width: 100%;
+        &__box{
+          width: 450px;
+          height: 40px;
+          font-size: 18px;
+          margin-top: 15px;
+          
+        }
+        &__send{
+          display: inline-block;
+          padding: 0.5em 1em;
+          text-decoration: none;
+          background: #668ad8;
+          color: #FFF;
+          border-bottom: solid 4px #627295;
+          border-radius: 3px;
+          vertical-align: top;
+          margin-top: 15px;
+          width: 65px;
+          height: 45px;
+        }
+      }
+    }  
+  }
+  .right{
+    width: 60vw;
+    height: 88vh;
+    .their-video{
+      padding: 30px;
+      height: 80%;
+      width: 100%;
+      box-sizing: border-box;
+      &__screen{
+        height: 100%;
+        width: 100%;
+        background-color: black;
+      }
+    }
+    .my-video{
+      height: 130px;
+      width: 130px;
+      background-color: black;
+      margin-left: 30px;
+
+    }
+    .information{
+
+    }
+  }
+}
