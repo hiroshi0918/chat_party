@@ -1,10 +1,17 @@
-.main
-  .top
-    .top__main-title
-      チャットパーティ
-    .top__sub-title
-      サブタイトル
-  =link_to "#", class: "signup" do
-    登録して利用開始する
-  =link_to "#", class: "login" do
-    ログイン
+.home
+  .header
+    .header__title
+      = link_to chats_path, class: "header__title__name" do
+        チャットパーティ
+    = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header__signout"
+    = link_to "#", class: "header__switch-btn" do
+      グループ
+    = link_to "#", class: "header__mypage" do
+      マイページ
+  .categories
+    - @hobby.each do |hobby|
+      = link_to "#", class: "categories__sort"  do
+        - hobby.name
+  .users
+    - @user.each do |user|
+      = render partial:"shared/userProfile", locals: {user: user}

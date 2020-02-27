@@ -1,8 +1,6 @@
 class ChatsController < ApplicationController
   def index
-  end
-  def new
-  end
-  def show
+    @user = User.all
+    @hobby = Hobby.all
   end
 end
