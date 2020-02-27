@@ -1,0 +1,13 @@
+= link_to "/users/#{user.id}", class: "user" do
+  .user__top
+    = image_tag("profile.jpeg", alt: "未設定", class: "user__top__photo")
+      
+    .user__top__nickname
+      = user.name
+  .user__hobby
+    趣味：
+    - user.hobbies.each do |u|
+      .user__hobby__list
+        = u.name
+  .user__introduction
+    = user.introduction

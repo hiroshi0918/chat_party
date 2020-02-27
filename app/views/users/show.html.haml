@@ -1,0 +1,35 @@
+.header
+  .header__title
+    = link_to root_path, class: "header__title__name" do
+      チャットパーティ
+  = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "header__signout"
+  = link_to "#", class: "header__switch-btn" do
+    グループ
+  = link_to "#", class: "header__mypage" do
+    マイページ
+.wrapper
+  .left
+    .people
+      .person
+        .person__photo
+        .person__name
+          = @user.name
+        .person__video
+          %i.fas.fa-play-circle
+    .messages
+      - @messages.each do |message|
+        .message
+          = image_tag("profile.jpeg", alt: "未設定", class: "message__icon")
+          .message__chatting
+            .message__chatting__says
+              %p
+                = message.text
+    .form
+      =form_with(model: [@user,@message] , local: true) do |f|
+        = f.text_field :text,placeholder: "コメントする", rows: "2", class: "new-message__box"
+        = f.submit '送信', class: "new-message__send"
+  .right
+    .their-video
+      .their-video__screen
+    .my-video
+    .information
